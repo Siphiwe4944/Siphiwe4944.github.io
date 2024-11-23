@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Hide hearts that go out of view */
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.button:hover {
+    background-color: #eee;
+}
+
+.response {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #ff4081;
+}
+
+.love-response {
+    font-size: 2rem;
+    color: #ff4081;
+}
+
+.heart-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none; /* So hearts don't interfere with the buttons */
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    transform: rotate(45deg);
+    opacity: 0.8;
+    animation: float 6s ease-in-out infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart:before {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.heart:after {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(45deg);
+    }
+    50% {
+        transform: translateY(-100px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(0) rotate(45deg);
+    }
+}
+
+
+footer {
+    background: none;
+    color: #ff4081;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
